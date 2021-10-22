@@ -34,7 +34,6 @@ for (let i = 0; i < precios.length; i++) {
     acum = acum + precios[i];
 }
 prom = acum / precios.length;
-
 // luna de cazador se produce cada tres años, pintar los años
 // de las proximas 15 lunas partiendo del año 2017
 
