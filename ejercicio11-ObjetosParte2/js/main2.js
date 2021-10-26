@@ -37,10 +37,14 @@ function handleBtns(ev) {
     const id = ev.target.id;
     if (id === "agregar") {
         platanos.agregar();
-        p.innerHTML = platanos.numActual;
+    } else if (id === "sacar") {
+        platanos.sacar();
+    } else {
+        platanos.reset();
     }
+    p.innerHTML = platanos.numActual;
 }
 for (let i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", handleBtns)
+    btns[i].addEventListener("click", handleBtns);
 }
 
