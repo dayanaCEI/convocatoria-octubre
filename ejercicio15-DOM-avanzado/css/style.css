@@ -1,0 +1,14 @@
+.boton{
+    display: block;
+    text-decoration: none;
+    background-image: linear-gradient(to top, grey,lightgrey);
+    color: azure;
+}
+
+.contenido{
+    overflow: hidden;
+    transition: height 2;
+}
+.oculto{
+    height: 0;
+}
