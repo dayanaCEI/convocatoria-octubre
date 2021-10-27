@@ -24,7 +24,7 @@ const peliculas = [
 const listaPelis = document.querySelector(".pelis");
 const listaFav = document.querySelector(".favoritas");
 const favoritas = [];
-
+/*
 function pintarPelis() {
     let html = "";
     for (const peli of peliculas) {
@@ -43,6 +43,17 @@ function pintarFavoritas() {
     }
     listaFav.innerHTML = html;
 }
+*/
+function pintarListado(listado, ul) {
+    let html = "";
+    for (const element of listado) {
+        html += `<li id="${element.id}" class="liPeli">`;
+        html += `Nombre: ${element.nombre}, Lenguaje: ${element.lenguaje}`;
+        html += `</li>`;
+    }
+    ul.innerHTML = html
+}
+
 function handlerClick(event) {
     const id = parseInt(event.target.id);
     const objectPeli = peliculas.find((peli) => peli.id === id)
@@ -55,7 +66,7 @@ function handlerClick(event) {
         const posicion = favoritas.findIndex((fav) => fav.id === id);
         favoritas.splice(posicion, 1);
     }
-    pintarFavoritas();
+    pintarListado(favoritas, listaFav);
 }
 function escucharClick() {
     const listElements = document.querySelectorAll(".liPeli");
@@ -63,5 +74,6 @@ function escucharClick() {
         li.addEventListener("click", handlerClick);
     }
 }
-pintarPelis();
+//pintarPelis();
+pintarListado(peliculas, listaPelis);
 escucharClick();
