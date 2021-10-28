@@ -34,7 +34,6 @@ function handlesCitys() {
     const ciudad = citys.value;
     const url = `../images/${ciudad}.jpeg`;
     img.setAttribute("src", url);
-
     // tarea terminar los dos casos que faltan,
     /*if (ciudad === "madrid") {
         img.setAttribute("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lorenzo_Quir%C3%B3s_-_Ornato_de_Plaza_Mayor_con_motivo_de_la_entrada_de_Carlos_III_en_Madrid.jpg/440px-Lorenzo_Quir%C3%B3s_-_Ornato_de_Plaza_Mayor_con_motivo_de_la_entrada_de_Carlos_III_en_Madrid.jpg")

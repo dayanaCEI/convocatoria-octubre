@@ -1,0 +1,9 @@
+{
+    "nombre": "Juan",
+    "apellido": "ruiz",
+    "hijos": [
+        "luis",
+        "ana",
+        "lucia"
+    ]
+}
