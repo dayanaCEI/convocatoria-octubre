@@ -6,7 +6,6 @@ fetch("./js/data.json")
         console.log(data);
     })
 
-
 const section = document.querySelector(".imgs");
 function pintarPerritos(listado) {
     listado.forEach((img, i) => {
