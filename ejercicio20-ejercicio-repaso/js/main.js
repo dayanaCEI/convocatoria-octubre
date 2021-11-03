@@ -64,7 +64,15 @@ function pintarUsuarios(listado) {
 
 function handleLi(ev) {
     const id = ev.currentTarget.id;
-    users[id].isFriend = true;
+
+    /*if (users[id].isFriend === false) {
+        users[id].isFriend = true;
+    } else {
+        users[id].isFriend = false;
+    }*/
+    //users[id].isFriend = users[id].isFriend === true ? false : true;
+
+    users[id].isFriend = !users[id].isFriend;
     pintarUsuarios(users);
     escucharUsuario();
 }
