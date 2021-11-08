@@ -13,9 +13,11 @@
     para añadir o no la clase del css
 */
 const users = [];
+let amigos = [];
 const ul = document.querySelector(".usuarios");
 const btn = document.querySelector(".btn");
 const input = document.querySelector("#nombre");
+const ulAmigos = document.querySelector(".amigos");
 
 fetch("https://randomuser.me/api/?results=10")
     .then(resp => resp.json())
@@ -64,16 +66,17 @@ function pintarUsuarios(listado) {
 
 function handleLi(ev) {
     const id = ev.currentTarget.id;
-
-    /*if (users[id].isFriend === false) {
-        users[id].isFriend = true;
-    } else {
-        users[id].isFriend = false;
-    }*/
-    //users[id].isFriend = users[id].isFriend === true ? false : true;
-
     users[id].isFriend = !users[id].isFriend;
+    if (users[id].isFriend) {
+        amigos.push(users[id]);
+    } else {
+        const indexAmigo = amigos.findIndex((element) => {
+            return users[id].id === element.id
+        });
+        amigos.splice(indexAmigo, 1);
+    }
 
+    localStorage.setItem("mejoresAmigos", JSON.stringify(amigos));
     pintarUsuarios(users);
     escucharUsuario();
 }
@@ -92,5 +95,13 @@ function handleClick(ev) {
     })
     pintarUsuarios(userFilter);
 }
-btn.addEventListener("click", handleClick)
+btn.addEventListener("click", handleClick);
 
+function getLocalStorage() {
+    const mejoresAmigos = JSON.parse(localStorage.getItem("mejoresAmigos"));
+    if (mejoresAmigos !== null) {
+        amigos = mejoresAmigos;
+    }
+
+}
+getLocalStorage();

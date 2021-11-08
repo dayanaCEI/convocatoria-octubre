@@ -1,6 +1,8 @@
+//esta variable selecciona el combo box de los tipos de pelicula
 const select = document.querySelector(".tipo");
 const section = document.querySelector(".peliculas");
 
+// funcion para crear los div en el
 function pintarPelis(peliculas) {
     for (const peli of peliculas.results) {
         const div = document.createElement("div");
