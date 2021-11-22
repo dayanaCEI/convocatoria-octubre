@@ -29,9 +29,13 @@
                 <th scope="row"><?php echo  $fila->idZoo; ?></th>
                 <td> <?php echo $fila->nombreZoo; ?></td>
                 <td> <?php echo $fila->ciudad; ?></td>
+                <td> 
+                  <!--<a href="modificar.php?id=<?php echo $fila->idZoo;?>&zoo=<?php echo $fila->nombreZoo;?>&ciudad=<?php echo $fila->ciudad;?>"> Editar </a>-->
+                  <a href="modificar.php?id=<?php echo $fila->idZoo;?>"> Editar </a>
+                </td>
+
             </tr>
        <?php } ?> 
-   
   </tbody>
 </table>
 </body>
