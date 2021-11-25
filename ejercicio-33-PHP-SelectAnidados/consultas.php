@@ -18,5 +18,22 @@ class Consultas extends Conexion{
         return $result;
     }
 
+    public function selectMunicipio($idProv){
+        $sql = "SELECT idMunicipio, nombreMun, fkProvincia
+        FROM municipio WHERE fkProvincia = $idProv";
+        $result = mysqli_query($this->conex,$sql);
+        return $result;
+    }
+
+    public function selectCalles($idMun){
+        $sql = "SELECT idCalle, nombreCalle, fkMunicipio
+        FROM calle WHERE fkMunicipio = $idMun";
+        $result = mysqli_query($this->conex,$sql);
+        return $result;
+    }
+    public function insertEnfermedad($nomEnf){
+        $sql = "INSERT INTO enfermedad (nombre) VALUE ('$nomEnf')";
+        mysqli_query($this->conex, $sql);
+    }
 }
 

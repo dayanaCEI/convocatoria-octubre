@@ -34,7 +34,16 @@
         </select>
 
         <select name="calle" id="calle">
-        </select>
+        </select><br>
+
+        <fieldset>
+            Enfermedades que ha sufrido<br>
+            <input type="checkbox" class="check" value="Hipertension">Hipertension <br>
+            <input type="checkbox" class="check"  value="COVID">COVID<br>
+            <input type="checkbox" class="check"  value="Diabetes">Diabetes<br>
+            <input type="checkbox" class="check"value="caries">caries
+        </fieldset>
+        <input type="submit" value="Registrar" class="btn">
 
     </form>
 </body>
