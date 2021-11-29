@@ -17,6 +17,35 @@ class User{
         $select->execute();
         return $select->fetchAll();
     }
+
+    public function login($pass, $email, $conex){
+        $sql = "SELECT id, nombre, rol, pass  FROM usuario WHERE email = :email ";
+        $select = $conex->prepare($sql);
+        $select->execute(array(":email" => $email));
+        $numFila = $select->rowCount(); 
+        
+        if($numFila == 0){
+            echo "Email no valido";
+        }
+        else{
+            $usuario =  $select->fetch();
+            if(password_verify($pass, $usuario["pass"])){
+                //crear sesion
+                echo "inicio de sesion correcto";
+            }
+            else{
+                echo "Contraseña incorrecta no valido";
+            }
+        }
+        
+    }
 }
 
+include "classConexion.php";
+
+$conex = new Conexion();
+$con = $conex->conexion();
+
+$user = new User();
+$user->login("123456", "guille@gmail.com", $con);
 ?>

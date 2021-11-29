@@ -7,6 +7,7 @@
     $con = $conex->conexion();
 
     $user = new User();
-    echo $user->insertUser($_POST["name"],$_POST["email"],$_POST["pass"],$con);
+    $pass = password_hash($_POST["pass"],PASSWORD_DEFAULT);
+    echo $user->insertUser($_POST["name"],$_POST["email"], $pass,$con);
     
 ?>

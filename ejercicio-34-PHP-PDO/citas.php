@@ -2,7 +2,7 @@
     include "header.html";
 ?>
 
-<h1>Estoy en usuarios</h1>
+<h1>AGREGAR CITA</h1>
 <form method="post" class="form">
     <div class="mb-3 row">
         <label for="staticEmail" class="col-sm-2 col-form-label">Usuario</label>
@@ -32,11 +32,14 @@
     </div>
     <div class="mb-3 row">
         <div class="col-sm-10">
-            <input type="submit" class="btn btn-success" id="btn">
+            <input type="submit" class="btn btn-success" id="btn-cita">
         </div>
     </div>
 </form>
 
+<div class="mb-3 row" id="resp">
+
+</div>
 
 <?php  
     include "footer.html";

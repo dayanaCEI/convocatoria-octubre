@@ -34,4 +34,23 @@ $(document).ready(function () {
             }
         })
     }
+
+    $("#btn-cita").on("click", function (ev) {
+        ev.preventDefault();
+        const dataCita = {
+            usuario: $("#user").val(),
+            servicio: $("#serv").val(),
+            fecha: $("#fecha").val(),
+            hora: $("#hora").val()
+        }
+        $.ajax({
+            url: "./php/controllerCita.php",
+            data: dataCita,
+            method: "POST",
+            success: function (respuesta) {
+                $("#resp").html(respuesta);
+            }
+        });
+    })
+
 })

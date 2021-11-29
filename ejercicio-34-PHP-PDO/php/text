@@ -1,0 +1,7 @@
+X 1.- encriptar la contraseña del usuario
+X 2.- Formulario de login
+X 3.- Consultar a la BD que el email y password son correcto SQL
+4.- Crear un  metodo que busque  el usuario que  inicia sesion
+5.- Crear las variables Session 
+6.- redirigir a las paginas restringidas
+
