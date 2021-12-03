@@ -1,0 +1,8 @@
+X 1.- Crear la BD (estructura, tablas)
+X 2.- crear estructura de carpetas del proyecto
+3.- Maquetacion HTML, CSS
+X 4.- Crear la clase para la  conexion  con la BD
+X 5.- Crear la clase de Peliculas,
+    1.- Consultar las peliculas (SELECT)
+    2.- Calcular cuantas paginas se van a generar
+    3.- Mostras las paginas en el HTML

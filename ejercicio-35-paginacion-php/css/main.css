@@ -1,0 +1,27 @@
+header{
+    padding-bottom: 20px;
+}
+ul{
+    padding: 0;
+    margin: 0;
+}
+li{
+    display: inline;
+    margin: 5px;
+}
+
+.link{
+    padding: 5px;
+    margin: 0px;
+    border-radius: 2px;
+    background-color:skyblue;
+    color:lightgrey;
+    text-decoration: none;
+}
+.active-menu{
+    background-color: blue;
+}
+.active{
+    padding: 5px;
+    background-color: aqua;
+}

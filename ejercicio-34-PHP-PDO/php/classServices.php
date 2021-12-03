@@ -17,8 +17,12 @@ class Service{
     4.- crear el objeto de la clase services para ejecutar el metodo
     */
 
-    
-    
+    public function insertServicio($arrayServic, $conex){
+        $sql = "INSERT INTO servicio (nombre descripcion, precio, imagen) VALUES (:nom,:descr,:prec,:img)";
+        $insert = $conex->prepare($sql);
+        $insert->execute(array(":nom"=>$arrayServic[0],":descr"=>$arrayServic[1], ":prec"=> $arrayServic[2],":img"=>$arrayServic[3]));
+    }
 }
+
 
 ?>
