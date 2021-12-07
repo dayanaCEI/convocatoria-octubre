@@ -47,6 +47,10 @@ class Database{
             echo  mysqli_error($this->con);
         }
     }
+    public function deleteZoo($id){
+        $deleteSql =  "DELETE  FROM zoo WHERE idZoo = $id";
+        mysqli_query($this->con, $deleteSql);
+    }
 
 }
 
