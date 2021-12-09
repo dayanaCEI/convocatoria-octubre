@@ -13,6 +13,8 @@
 <body>
     <div class="container">
         <form method="POST" action="./php/controller.php">
+            <input name="oculto" type="hidden" value="1">
+
             <fieldset>
                 <div class="form-group">
                     <label for="exampleInputEmail1" class="form-label mt-4">Nombre</label>
@@ -31,10 +33,10 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
-                    <select>
-                        <option value="usuario">Usuario</option>
-                        <option value="admin">admin</option>
-                        <option value="consultor">consultor</option>
+                    <select name="rol">
+                        <option value="1">Usuario</option>
+                        <option value="2">admin</option>
+                        <option value="3">consultor</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Login</button>

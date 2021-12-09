@@ -13,6 +13,8 @@
 <body>
     <div class="container">
         <form method="POST" action="./php/controller.php">
+            <input name="oculto" type="hidden" value="0">
+
             <fieldset>
                 <div class="form-group">
                     <label for="exampleInputEmail1" class="form-label mt-4">Email</label>
