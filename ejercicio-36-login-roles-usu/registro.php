@@ -34,15 +34,25 @@
                 <div class="form-group">
                     <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
                     <select name="rol">
-                        <option value="1">Usuario</option>
-                        <option value="2">admin</option>
-                        <option value="3">consultor</option>
+                        <?php
+                            include "./php/classConexion.php";
+                            include "./php/classUser.php";
+                            
+                            $conex = new Conexion();
+                            $user = new User();
+                            $listado = $user->selectRoles($conex);
+                            for($i =0; $i< count($listado); $i++){
+                                echo '<option value="'. $listado[$i]["id"].'">'. $listado[$i]["rol"] .'</option>';
+                            }
+                    ?>
                     </select>
+
                 </div>
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-primary">Registrate</button>
             </fieldset>
         </form>
     </div>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

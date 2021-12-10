@@ -33,7 +33,12 @@ class User {
         else{
             echo "el email esta repetido";
         }
-        
+    }
+    public function selectRoles($conex){
+        $select =  $conex->prepare("SELECT * FROM roles");
+        $select->execute();
+        $listado = $select->fetchAll();
+        return $listado;
     }
 }
 ?>

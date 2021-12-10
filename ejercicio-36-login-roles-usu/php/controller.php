@@ -5,14 +5,16 @@ include "classUser.php";
 
 $conex  = new Conexion();
 $user = new User();
-
-$caso = $_POST["oculto"];
+$caso = isset($_POST["oculto"]) ? $_POST["oculto"] : 2;
 
 if($caso  == 0){
     $user->login($_POST["email"],$_POST["pass"] ,$conex);
     header("Location:../index.php");
-}else{
+}else if($caso  == 1){
     //registro 
     $pass = password_hash($_POST["pass"],PASSWORD_DEFAULT);
     $user->registrarUsuario($_POST["email"],$_POST["nombre"],$pass,$_POST["rol"],$conex);
+}else if($caso  == 2){
+    $texto = "consulta de roles";
+    echo json_encode($texto);
 }
