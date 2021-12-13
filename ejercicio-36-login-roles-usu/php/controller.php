@@ -14,7 +14,8 @@ if($caso  == 0){
     //registro 
     $pass = password_hash($_POST["pass"],PASSWORD_DEFAULT);
     $user->registrarUsuario($_POST["email"],$_POST["nombre"],$pass,$_POST["rol"],$conex);
+    
 }else if($caso  == 2){
-    $texto = "consulta de roles";
-    echo json_encode($texto);
+    $listado = $user->selectRoles($conex);
+    echo json_encode($listado);
 }

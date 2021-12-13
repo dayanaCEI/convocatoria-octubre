@@ -12,47 +12,38 @@
 
 <body>
     <div class="container">
-        <form method="POST" action="./php/controller.php">
+        <form method="POST" class="form">
             <input name="oculto" type="hidden" value="1">
 
             <fieldset>
                 <div class="form-group">
                     <label for="exampleInputEmail1" class="form-label mt-4">Nombre</label>
-                    <input name="nombre" type="text" class="form-control" id="exampleInputEmail1"
-                        aria-describedby="emailHelp" placeholder="indique tu nombre">
+                    <input name="nombre" type="text" class="form-control" aria-describedby="emailHelp"
+                        placeholder="indique tu nombre">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1" class="form-label mt-4">Email</label>
-                    <input name="email" type="email" class="form-control" id="exampleInputEmail1"
-                        aria-describedby="emailHelp" placeholder="Enter email">
+                    <input name="email" type="email" class="form-control" aria-describedby="emailHelp"
+                        placeholder="Enter email">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
-                    <input name="pass" type="password" class="form-control" id="exampleInputPassword1"
-                        placeholder="Password">
+                    <input name="pass" type="password" class="form-control" placeholder="Password">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
-                    <select name="rol">
-                        <?php
-                            include "./php/classConexion.php";
-                            include "./php/classUser.php";
-                            
-                            $conex = new Conexion();
-                            $user = new User();
-                            $listado = $user->selectRoles($conex);
-                            for($i =0; $i< count($listado); $i++){
-                                echo '<option value="'. $listado[$i]["id"].'">'. $listado[$i]["rol"] .'</option>';
-                            }
-                    ?>
+                    <select name="rol" class="jsRol">
+                        <option value="1"> seleccione </option>
                     </select>
-
+                    <small class="msjRol"></small>
                 </div>
-                <button type="submit" class="btn btn-primary">Registrate</button>
+                <input type="submit" class="btn btn-primary" value="Registrate">
             </fieldset>
         </form>
     </div>
-    <script src="./js/main.js"></script>
+    <div class="msj">
+        <div>
+            <script src="./js/main.js"></script>
 </body>
 
 </html>

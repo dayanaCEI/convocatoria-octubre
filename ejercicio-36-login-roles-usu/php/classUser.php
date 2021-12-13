@@ -25,10 +25,10 @@ class User {
         $select->execute(array(":email" => $correo));
 
         if($select->rowCount() == 0 ){
-            echo "el email no existe";
             $insert = "INSERT INTO usuario (nombre, email, pass, fkRol) VALUE(:name,:email, :pass, :fkrol)";
             $insertUser = $cone->prepare($insert);
             $insertUser->execute(array(":name" => $name, ":email" => $correo, ":pass" =>$pass, ":fkrol"=>$rol));
+            echo "se ha registrado con exito ";
         }
         else{
             echo "el email esta repetido";

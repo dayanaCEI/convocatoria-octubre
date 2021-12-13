@@ -10,7 +10,6 @@ class Conexion extends PDO{
     public function __construct(){
         try{                 
             parent::__construct("{$this->type}:dbname={$this->db};host={$this->host}", $this->user,$this->pass);
-            //echo "se ha conectado";
         } 
         catch(PDOException $e){
             //echo "no se ha conectado". $e->getMessage();
