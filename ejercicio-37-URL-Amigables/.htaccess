@@ -1,0 +1,13 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html  -f
+RewriteRule ^(.*)$  $1.html
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^productos/([0-9]+)$ productos.php?id=$1
+RewriteRule ^editar/([0-9]+)/([a-z]+)$ editar.php?id=$1&name=$2
+RewriteRule ^perfil/([a-z]{4}+)$ perfil.php?user=$1
+
+
