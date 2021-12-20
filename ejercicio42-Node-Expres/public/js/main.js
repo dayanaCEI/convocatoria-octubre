@@ -20,3 +20,16 @@ function handlerClick(ev) {
 
 }
 btn.addEventListener("click", handlerClick)
+
+const enlace = document.querySelector(".js-enlace");
+
+function handlerEnlace(ev) {
+    ev.preventDefault();
+    fetch("http://localhost:3500/contacto")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            document.querySelector(".msj").innerHTML = data
+        })
+}
+enlace.addEventListener("click", handlerEnlace)

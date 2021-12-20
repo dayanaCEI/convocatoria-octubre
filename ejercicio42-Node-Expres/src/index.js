@@ -14,12 +14,15 @@ const staticServer = "./public";
 server.use(express.static(staticServer));
 
 server.post("/person", (req, resp) => {
-    console.log(req.body.name);
-    resp.json("hola")
+    //console.log(req.body.name);
+    resp.json("hola como " + req.body.name);
 })
 
 
-
+server.get("/contacto", (req, resp) => {
+    //consulta a la BD
+    resp.json("Hola estoy en la pagina de contacto")
+});
 
 //GET, POST, PUT, DELETE
 /*server.get("/", (require, respuesta) => {
