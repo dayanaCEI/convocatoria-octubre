@@ -1,20 +1,22 @@
-const inputBtn = document.querySelector(".js-btn");
-const inputName = document.querySelector(".js-name");
+console.log("ready")
+const btn = document.querySelector(".js-btn")
 
-function manejadoraClick(ev) {
+function handlerClick(ev) {
     ev.preventDefault();
-    const bodyparams = { userName: inputName.value }
-    //realizo una peticion a mi servidor de node
-    fetch("http://localhost:3500/user", {
+    const inputValue = document.querySelector(".input-js").value;
+
+    const formData = { name: inputValue }
+    fetch("http://localhost:3500/person", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(bodyparams)
+        body: JSON.stringify(formData)
     })
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            console.log(data)
         })
+
 }
-inputBtn.addEventListener("click", manejadoraClick)
+btn.addEventListener("click", handlerClick)
