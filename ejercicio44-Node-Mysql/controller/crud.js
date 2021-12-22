@@ -1,17 +1,38 @@
 const conexion = require("../database/db");
 
 const insert = (req, resp) => {
-    const nombrePro = "Planta de navidad";
-    const precioProd = 5;
-    const descripcionProd = "planta roja navideña";
+    console.log(req.body)
+    const nombrePro = req.body.nombre;
+    const precioProd = req.body.precio;
+    const descripcionProd = req.body.descripcion;
 
     conexion.query("INSERT INTO productos SET ?", { nombre: nombrePro, precio: precioProd, descripcion: descripcionProd }, (error, resultado) => {
-        console.log(resultado);
+        if (error) {
+            console.log("error" + error);
+
+        } else {
+            resp.redirect("/")
+        }
     });
 }
-/*const select = () => {
+const select = (req, resp) => {
+    return new Promise((resolve, reject) => {
+        conexion.query("SELECT id,nombre, precio, descripcion FROM productos", (error, result) => {
+            if (error) {
+                reject(error);
+            } else {
+                resolve(result);
+            }
+        })
+    })
 }
-*/
+const selectId = () => {
+
+}
+const update = () => {
+
+}
 module.exports = {
-    insert: insert
+    insert: insert,
+    select: select
 }
