@@ -1,0 +1,13 @@
+h1{
+    color: blueviolet;
+}
+ul{
+    list-style-type: none;
+}
+li{
+    display: inline;
+}
+
+.background{
+    background-color: chartreuse;
+}
