@@ -50,9 +50,21 @@ const update = (require, response) => {
         }
     })
 }
+
+const deletePro = (req, resp) => {
+    conexion.query("DELETE FROM productos WHERE id = ?", [req.body.id], (error, result) => {
+        if (error) {
+            console.log(error)
+        } else {
+            resp.redirect("/");
+        }
+    })
+}
+
 module.exports = {
     insert: insert,
     select: select,
     selectId: selectId,
-    update: update
+    update: update,
+    delete: deletePro
 }

@@ -1,0 +1,9 @@
+<body>
+    <h1>
+        estas seguro que desea eliminar el producto <%= nombre %>
+    </h1>
+    <form action="/confirmEliminar" method="post">
+        <input type="hidden" name="id" value="<%= id %>">
+        <input type="submit" value="ELIMINAR">
+    </form>
+</body>

@@ -49,6 +49,13 @@ server.get("/editar/:id", (req, resp) => {
 })
 server.post("/update", crud.update);
 
+server.get("/eliminar/:idP/:nombre", (req, respo) => {
+    console.log("el id que quiero eliminar" + req.params.idP, req.params.nombre);
+    //renderizar view eliminar
+    respo.render("eliminar", { nombre: req.params.nombre, id: req.params.idP })
+})
+
+server.post("/confirmEliminar", crud.delete);
 
 server.use((req, resp) => {
     resp.status(404).render("404")
