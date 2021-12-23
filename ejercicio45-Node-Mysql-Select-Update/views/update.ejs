@@ -1,0 +1,22 @@
+<%- include("templates/header",{tituloWeb: "modificar producto" }); %>
+
+    <body>
+        <h1>Editar Producto
+        </h1>
+
+        <form action="/update" method="POST">
+            <input type="hidden" name="id" value="<%= result.id %>">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" value="<%= result.nombre %>"><br>
+
+            <label for="precio">precio</label>
+            <input type="text" name="precio" id="precio" value="<%= result.precio %>"><br>
+
+            <label for="descripcion">descripcion</label>
+            <input type="text" name="descripcion" id="descripcion" value="<%= result.descripcion %>"><br>
+
+            <input type="submit" value="MODIFICAR">
+        </form>
+    </body>
+
+    </html>

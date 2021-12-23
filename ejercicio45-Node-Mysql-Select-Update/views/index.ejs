@@ -1,0 +1,57 @@
+<%- include("templates/header",{tituloWeb:"xyz"}) %>
+
+    <body>
+        <%- include("templates/menu") %>
+            <h1>
+                Estoy en <%= titulo %>
+            </h1>
+            <h4>
+                <%= subtitulo %>
+            </h4>
+            <p class="parrafo">CLICK</p>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Descripcion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% listado.forEach((producto)=> { %>
+                        <tr>
+                            <th scope="row">
+                                <a href="#">
+                                    <%= producto.id %>
+                                </a>
+                            </th>
+                            <td>
+                                <%= producto.nombre %>
+                            </td>
+                            <td>
+                                <%= producto.precio %>
+                            </td>
+                            <td>
+                                <%= producto.descripcion %>
+                            </td>
+                            <td>
+                                <a href="/editar/<%= producto.id %>"> <i class="bi bi-pencil"></i> </a>
+                            </td>
+                            <td>
+                                <a href="/eliminar/<%= producto.id %>"><i class="bi bi-x-circle-fill"></i> </a>
+                            </td>
+                        </tr>
+
+                        <% }) %>
+
+
+                </tbody>
+            </table>
+
+
+            <%- include("templates/footer") %>
+    </body>
+
+    </html>
